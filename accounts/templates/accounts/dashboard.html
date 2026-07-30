@@ -1,0 +1,63 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h2 class="text-center mb-4">User Dashboard</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card text-center border-primary shadow">
+            <div class="card-body">
+                <h5>Total Bookings</h5>
+                <h2>{{ total_bookings }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center border-warning shadow">
+            <div class="card-body">
+                <h5>Pending</h5>
+                <h2>{{ pending }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center border-success shadow">
+            <div class="card-body">
+                <h5>Approved</h5>
+                <h2>{{ approved }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center border-danger shadow">
+            <div class="card-body">
+                <h5>Rejected</h5>
+                <h2>{{ rejected }}</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mt-4">
+
+    <a href="{% url 'book_hall' %}" class="btn btn-primary">
+        Book Hall
+    </a>
+
+    <a href="{% url 'my_bookings' %}" class="btn btn-success">
+        My Bookings
+    </a>
+
+</div>
+
+{% endblock %}

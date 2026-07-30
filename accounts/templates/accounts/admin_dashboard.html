@@ -1,0 +1,81 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h2 class="text-center mb-4">Admin Dashboard</h2>
+
+<div class="row">
+
+    <div class="col-md-4 mb-3">
+        <div class="card border-primary shadow text-center">
+            <div class="card-body">
+                <h5>Total Users</h5>
+                <h2>{{ total_users }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card border-success shadow text-center">
+            <div class="card-body">
+                <h5>Total Seminar Halls</h5>
+                <h2>{{ total_halls }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card border-dark shadow text-center">
+            <div class="card-body">
+                <h5>Total Bookings</h5>
+                <h2>{{ total_bookings }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card border-warning shadow text-center">
+            <div class="card-body">
+                <h5>Pending</h5>
+                <h2>{{ pending }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card border-success shadow text-center">
+            <div class="card-body">
+                <h5>Approved</h5>
+                <h2>{{ approved }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card border-danger shadow text-center">
+            <div class="card-body">
+                <h5>Rejected</h5>
+                <h2>{{ rejected }}</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mt-4">
+
+    <a href="{% url 'dashboard' %}" class="btn btn-primary">
+        User Dashboard
+    </a>
+
+    <a href="{% url 'hall_list' %}" class="btn btn-success">
+        Seminar Halls
+    </a>
+
+</div>
+
+{% endblock %}
